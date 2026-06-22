@@ -5,7 +5,6 @@ import Image from "next/image";
 import { upsertService, deleteService, reorderServices } from "../actions";
 import { UploadDropzone } from "@/lib/uploadthing";
 import { Plus, Trash2, Edit2, ArrowUp, ArrowDown, Check, X, ImageIcon } from "lucide-react";
-import "@uploadthing/react/styles.css";
 
 interface ServiceItem {
   id: string;

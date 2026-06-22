@@ -25,7 +25,7 @@ interface ValuePropsProps {
 
 export default function ValueProps({ valueProps = defaultValueProps }: ValuePropsProps) {
   return (
-    <section className="py-16 sm:py-20">
+    <section id="keunggulan" className="py-16 sm:py-20">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

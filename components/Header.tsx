@@ -2,10 +2,10 @@ import Link from "next/link";
 import { business as defaultBusiness } from "@/lib/site-config";
 
 const navLinks = [
-  { href: "/", label: "Beranda" },
+  { href: "/#keunggulan", label: "Keunggulan" },
   { href: "/layanan", label: "Layanan" },
+  { href: "/#cara-pesan", label: "Cara Pesan" },
   { href: "/harga", label: "Harga" },
-  { href: "/faq", label: "FAQ" },
 ];
 
 interface HeaderProps {

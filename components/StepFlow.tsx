@@ -16,7 +16,7 @@ interface StepFlowProps {
 
 export default function StepFlow({ bookingSteps = defaultBookingSteps }: StepFlowProps) {
   return (
-    <section className="py-16 sm:py-20 bg-mist border-y border-line overflow-hidden">
+    <section id="cara-pesan" className="py-16 sm:py-20 bg-mist border-y border-line overflow-hidden">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

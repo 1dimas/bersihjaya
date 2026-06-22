@@ -97,41 +97,11 @@ export default function AdminLayoutClient({ children, session }: AdminLayoutClie
   );
 
   return (
-    <div className="min-h-screen bg-mist flex flex-col md:flex-row">
-      {/* Desktop Sidebar (hidden on mobile) */}
-      <aside className="hidden md:block w-64 shrink-0 sticky top-0 h-screen z-25">
+    <div className="min-h-screen bg-mist flex flex-row">
+      {/* Sidebar (Always visible now) */}
+      <aside className="w-64 shrink-0 sticky top-0 h-screen z-25">
         <SidebarContent />
       </aside>
-
-      {/* Mobile Header */}
-      <header className="md:hidden flex h-16 items-center justify-between px-6 bg-paper border-b border-line sticky top-0 z-30 shadow-sm">
-        <Link href="/" className="font-display font-bold text-pine-600 flex items-center gap-1.5">
-          <span aria-hidden="true" className="text-citrus-500 font-bold">✓</span>
-          <span>Admin</span>
-        </Link>
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="p-2 rounded-lg border border-line hover:bg-mist text-ink transition-colors"
-          aria-label="Toggle menu"
-        >
-          {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
-      </header>
-
-      {/* Mobile Drawer Backdrop & Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 z-40 flex">
-          {/* Backdrop */}
-          <div
-            className="fixed inset-0 bg-ink/30 backdrop-blur-xs"
-            onClick={() => setMobileMenuOpen(false)}
-          />
-          {/* Menu Drawer */}
-          <div className="relative flex w-full max-w-xs flex-1 flex-col bg-paper shadow-2xl animate-slideRight">
-            <SidebarContent />
-          </div>
-        </div>
-      )}
 
       {/* Main Page Area */}
       <main className="flex-1 p-6 md:p-10 max-w-6xl mx-auto w-full overflow-x-hidden">

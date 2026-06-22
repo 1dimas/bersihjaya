@@ -52,11 +52,6 @@ export default function Footer({ business = defaultBusiness }: FooterProps) {
               </Link>
             </li>
             <li>
-              <Link href="/faq" className="hover:text-citrus-400">
-                FAQ
-              </Link>
-            </li>
-            <li>
               <Link href="/syarat-ketentuan" className="hover:text-citrus-400">
                 Syarat & Ketentuan
               </Link>
