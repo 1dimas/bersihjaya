@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -42,7 +43,12 @@ export default function LoginPage() {
       <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-pine-200/40 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-citrus-200/30 blur-[120px] pointer-events-none" />
 
-      <div className="w-full max-w-md bg-paper border border-line rounded-2xl shadow-xl p-8 relative z-10">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="w-full max-w-md bg-paper border border-line rounded-2xl shadow-xl p-8 relative z-10"
+      >
         <div className="text-center mb-8">
           <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-pine-600 text-white font-display font-bold text-xl mb-3 shadow-md shadow-pine-600/10">
             ✓
@@ -111,7 +117,7 @@ export default function LoginPage() {
             )}
           </button>
         </form>
-      </div>
+      </motion.div>
     </main>
   );
 }

@@ -128,14 +128,17 @@ export async function reorderValueProps(items: { id: string; sortOrder: number }
   await checkAuth();
 
   try {
-    await prisma.$transaction(
-      items.map((item) =>
-        prisma.valueProp.update({
-          where: { id: item.id },
-          data: { sortOrder: item.sortOrder },
-        })
-      )
-    );
+    const validItems = items.filter(item => !item.id.startsWith("default-"));
+    if (validItems.length > 0) {
+      await prisma.$transaction(
+        validItems.map((item) =>
+          prisma.valueProp.update({
+            where: { id: item.id },
+            data: { sortOrder: item.sortOrder },
+          })
+        )
+      );
+    }
     revalidatePath("/");
     return { success: true };
   } catch (error: any) {
@@ -213,14 +216,17 @@ export async function reorderServices(items: { id: string; sortOrder: number }[]
   await checkAuth();
 
   try {
-    await prisma.$transaction(
-      items.map((item) =>
-        prisma.service.update({
-          where: { id: item.id },
-          data: { sortOrder: item.sortOrder },
-        })
-      )
-    );
+    const validItems = items.filter(item => !item.id.startsWith("default-"));
+    if (validItems.length > 0) {
+      await prisma.$transaction(
+        validItems.map((item) =>
+          prisma.service.update({
+            where: { id: item.id },
+            data: { sortOrder: item.sortOrder },
+          })
+        )
+      );
+    }
     revalidatePath("/");
     revalidatePath("/layanan");
     revalidatePath("/harga");
@@ -286,14 +292,17 @@ export async function reorderBookingSteps(items: { id: string; sortOrder: number
   await checkAuth();
 
   try {
-    await prisma.$transaction(
-      items.map((item) =>
-        prisma.bookingStep.update({
-          where: { id: item.id },
-          data: { sortOrder: item.sortOrder },
-        })
-      )
-    );
+    const validItems = items.filter(item => !item.id.startsWith("default-"));
+    if (validItems.length > 0) {
+      await prisma.$transaction(
+        validItems.map((item) =>
+          prisma.bookingStep.update({
+            where: { id: item.id },
+            data: { sortOrder: item.sortOrder },
+          })
+        )
+      );
+    }
     revalidatePath("/");
     return { success: true };
   } catch (error: any) {
@@ -360,14 +369,17 @@ export async function reorderTestimonials(items: { id: string; sortOrder: number
   await checkAuth();
 
   try {
-    await prisma.$transaction(
-      items.map((item) =>
-        prisma.testimonial.update({
-          where: { id: item.id },
-          data: { sortOrder: item.sortOrder },
-        })
-      )
-    );
+    const validItems = items.filter(item => !item.id.startsWith("default-"));
+    if (validItems.length > 0) {
+      await prisma.$transaction(
+        validItems.map((item) =>
+          prisma.testimonial.update({
+            where: { id: item.id },
+            data: { sortOrder: item.sortOrder },
+          })
+        )
+      );
+    }
     revalidatePath("/");
     return { success: true };
   } catch (error: any) {
@@ -433,14 +445,17 @@ export async function reorderFaqs(items: { id: string; sortOrder: number }[]) {
   await checkAuth();
 
   try {
-    await prisma.$transaction(
-      items.map((item) =>
-        prisma.faq.update({
-          where: { id: item.id },
-          data: { sortOrder: item.sortOrder },
-        })
-      )
-    );
+    const validItems = items.filter(item => !item.id.startsWith("default-"));
+    if (validItems.length > 0) {
+      await prisma.$transaction(
+        validItems.map((item) =>
+          prisma.faq.update({
+            where: { id: item.id },
+            data: { sortOrder: item.sortOrder },
+          })
+        )
+      );
+    }
     revalidatePath("/");
     revalidatePath("/faq");
     return { success: true };

@@ -54,3 +54,18 @@ summary::-webkit-details-marker {
   background-color: theme("colors.citrus.400");
   color: theme("colors.ink");
 }
+
+/* Custom Text Gradients */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, theme("colors.pine.600"), theme("colors.pine.400"));
+}
+
+.text-gradient-citrus {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, theme("colors.citrus.600"), theme("colors.citrus.400"));
+}

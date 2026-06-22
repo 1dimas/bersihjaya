@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import { Check, X } from "lucide-react";
 import { ServiceItem } from "@/lib/site-config";
+import { motion } from "framer-motion";
 
 export default function ServiceCard({
   service,
@@ -13,7 +16,13 @@ export default function ServiceCard({
     variant === "compact" ? service.included.slice(0, 3) : service.included;
 
   return (
-    <article className="group rounded-2xl border border-line bg-paper overflow-hidden transition-shadow hover:shadow-lg">
+    <motion.article 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="group rounded-2xl border border-line bg-paper overflow-hidden transition-shadow hover:shadow-lg"
+    >
       {/* Service image */}
       <div className="relative aspect-[16/9] overflow-hidden">
         <Image
@@ -61,6 +70,6 @@ export default function ServiceCard({
           </>
         )}
       </div>
-    </article>
+    </motion.article>
   );
 }

@@ -36,6 +36,10 @@ const config: Config = {
       maxWidth: {
         content: "72rem",
       },
+      boxShadow: {
+        glow: "0 0 20px rgba(20, 92, 80, 0.3)",
+        "glow-citrus": "0 0 20px rgba(232, 162, 58, 0.4)",
+      },
       keyframes: {
         tickIn: {
           "0%": { opacity: "0", transform: "translateX(-6px)" },
@@ -49,11 +53,18 @@ const config: Config = {
           "0%": { opacity: "0", transform: "translateY(8px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        blob: {
+          "0%": { transform: "translate(0px, 0px) scale(1)" },
+          "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+          "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+          "100%": { transform: "translate(0px, 0px) scale(1)" },
+        },
       },
       animation: {
         tickIn: "tickIn 0.45s ease-out forwards",
         checkDraw: "checkDraw 0.4s ease-out forwards",
         fadeUp: "fadeUp 0.5s ease-out forwards",
+        blob: "blob 7s infinite",
       },
     },
   },

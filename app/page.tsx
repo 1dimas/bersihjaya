@@ -42,7 +42,7 @@ export default async function HomePage() {
       <Hero business={business} heroConfig={heroConfig} />
       <ValueProps valueProps={valueProps} />
 
-      <section className="py-16 sm:py-20 bg-mist border-y border-line">
+      <section className="py-16 sm:py-20 bg-gradient-to-b from-transparent to-mist/50 border-t border-line/30">
         <Container>
           <SectionHeading
             eyebrow="Layanan kami"
@@ -85,7 +85,7 @@ export default async function HomePage() {
 
       <Testimonials testimonials={testimonials} />
 
-      <section className="py-16 sm:py-20 bg-mist border-y border-line">
+      <section className="py-16 sm:py-20 bg-gradient-to-t from-mist/50 to-transparent border-t border-line/30">
         <Container className="max-w-3xl">
           <SectionHeading eyebrow="Pertanyaan umum" title="Yang sering ditanyakan" align="center" />
           <div className="mt-10">
