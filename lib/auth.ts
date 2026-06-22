@@ -41,8 +41,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       const isLoginPage = request.nextUrl.pathname === "/admin/login";
       const isLoggedIn = !!auth?.user;
 
-      // Allow login page access always
-      if (isLoginPage) return true;
+      // Redirect logged in users away from the login page
+      if (isLoginPage) {
+        if (isLoggedIn) {
+          return Response.redirect(new URL("/admin", request.nextUrl));
+        }
+        return true;
+      }
 
       // Protect all /admin/* routes
       if (isAdmin && !isLoggedIn) return false;
