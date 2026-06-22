@@ -1,0 +1,38 @@
+{
+  "name": "bersih-jaya-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Website company profile jasa cleaning service - Next.js, dioptimalkan untuk kecepatan dan kemudahan baca.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "@uploadthing/react": "^7.3.3",
+    "lucide-react": "^0.460.0",
+    "next": "16.2.9",
+    "next-auth": "^5.0.0-beta.31",
+    "prisma": "^5.22.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "uploadthing": "^7.7.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.0",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.17.0",
+    "eslint-config-next": "16.2.9",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  }
+}

@@ -1,0 +1,95 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── Info Bisnis Utama ───────────────────────────────────
+// Satu record saja (singleton), id selalu "main"
+model Business {
+  id             String @id @default("main")
+  name           String
+  tagline        String
+  whatsappNumber String @map("whatsapp_number")
+  email          String
+  address        String
+  serviceArea    String @map("service_area")
+  operatingHours String @map("operating_hours")
+  instagram      String
+
+  @@map("businesses")
+}
+
+// ─── Konfigurasi Hero Section ────────────────────────────
+model HeroConfig {
+  id             String   @id @default("main")
+  status         String
+  description    String
+  ticketTitle    String   @map("ticket_title")
+  ticketStatus   String   @map("ticket_status")
+  ticketItems    String[] @map("ticket_items")
+  ticketDuration String   @map("ticket_duration")
+
+  @@map("hero_configs")
+}
+
+// ─── Keunggulan / Value Proposition ──────────────────────
+model ValueProp {
+  id          String @id @default(cuid())
+  iconName    String @map("icon_name")
+  title       String
+  description String
+  sortOrder   Int    @map("sort_order")
+
+  @@map("value_props")
+}
+
+// ─── Layanan ─────────────────────────────────────────────
+model Service {
+  id        String   @id @default(cuid())
+  slug      String   @unique
+  name      String
+  shortDesc String   @map("short_desc")
+  priceFrom String   @map("price_from")
+  unit      String
+  image     String
+  included  String[]
+  excluded  String[]
+  sortOrder Int      @map("sort_order")
+
+  @@map("services")
+}
+
+// ─── Langkah Pemesanan ───────────────────────────────────
+model BookingStep {
+  id          String @id @default(cuid())
+  title       String
+  description String
+  sortOrder   Int    @map("sort_order")
+
+  @@map("booking_steps")
+}
+
+// ─── Testimoni Pelanggan ─────────────────────────────────
+model Testimonial {
+  id        String @id @default(cuid())
+  name      String
+  role      String
+  quote     String
+  sortOrder Int    @map("sort_order")
+
+  @@map("testimonials")
+}
+
+// ─── FAQ ─────────────────────────────────────────────────
+model Faq {
+  id        String @id @default(cuid())
+  question  String
+  answer    String
+  sortOrder Int    @map("sort_order")
+
+  @@map("faqs")
+}

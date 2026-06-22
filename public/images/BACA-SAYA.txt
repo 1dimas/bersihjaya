@@ -1,0 +1,12 @@
+Taruh foto asli di folder ini, misalnya:
+- hero-rumah.jpg
+- before-1.jpg / after-1.jpg
+- before-2.jpg / after-2.jpg
+
+Lalu gunakan komponen <Image> dari "next/image" supaya otomatis
+dikompres & lazy-load. Contoh:
+
+  import Image from "next/image";
+  <Image src="/images/after-1.jpg" alt="Ruang tamu setelah dibersihkan" width={600} height={600} />
+
+Lihat README.md bagian "Mengganti Foto Placeholder" untuk detail lengkap.
